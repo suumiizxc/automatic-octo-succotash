@@ -1,0 +1,161 @@
+2022/08/01 23:23:28 logger.go:27: 127.0.0.1:40636 POST /person/create 
+2022/08/01 23:23:28 server.go:3197: http: panic serving 127.0.0.1:40636: runtime error: invalid memory address or nil pointer dereference
+goroutine 20 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/go/src/net/http/server.go:1825 +0xbf
+panic({0x6aaf20, 0x9038f0})
+	/usr/local/go/src/runtime/panic.go:844 +0x258
+github.com/suumiizxc/raw_rest1/api/person.(*Person).CreateUser(0x69af00?, {0x771310, 0xc00012c0e0}, 0xc000146200)
+	/home/sumiyadorj/Work/go_projects/raw_rest1/api/person/person.go:50 +0x288
+net/http.HandlerFunc.ServeHTTP(0xc000146100?, {0x771310?, 0xc00012c0e0?}, 0xc0000ae078?)
+	/usr/local/go/src/net/http/server.go:2084 +0x2f
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc000126000, {0x771310, 0xc00012c0e0}, 0xc000146000)
+	/home/sumiyadorj/go/pkg/mod/github.com/gorilla/mux@v1.8.0/mux.go:210 +0x1cf
+github.com/suumiizxc/raw_rest1/logger.(*Logger).LogRequest.func1({0x771310, 0xc00012c0e0}, 0xc000146000)
+	/home/sumiyadorj/Work/go_projects/raw_rest1/logger/logger.go:29 +0x1df
+net/http.HandlerFunc.ServeHTTP(0x0?, {0x771310?, 0xc00012c0e0?}, 0x40e6e5?)
+	/usr/local/go/src/net/http/server.go:2084 +0x2f
+net/http.serverHandler.ServeHTTP({0x770680?}, {0x771310, 0xc00012c0e0}, 0xc000146000)
+	/usr/local/go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc0000b5180, {0x771568, 0xc00009b4d0})
+	/usr/local/go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:3071 +0x4db
+2022/08/01 23:23:28 logger.go:27: 127.0.0.1:40640 POST /person/create 
+2022/08/01 23:23:28 server.go:3197: http: panic serving 127.0.0.1:40640: runtime error: invalid memory address or nil pointer dereference
+goroutine 34 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/go/src/net/http/server.go:1825 +0xbf
+panic({0x6aaf20, 0x9038f0})
+	/usr/local/go/src/runtime/panic.go:844 +0x258
+github.com/suumiizxc/raw_rest1/api/person.(*Person).CreateUser(0x69af00?, {0x771310, 0xc0001b8000}, 0xc0001a8200)
+	/home/sumiyadorj/Work/go_projects/raw_rest1/api/person/person.go:50 +0x288
+net/http.HandlerFunc.ServeHTTP(0xc0001a8100?, {0x771310?, 0xc0001b8000?}, 0xc0000ae078?)
+	/usr/local/go/src/net/http/server.go:2084 +0x2f
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc000126000, {0x771310, 0xc0001b8000}, 0xc0001a8000)
+	/home/sumiyadorj/go/pkg/mod/github.com/gorilla/mux@v1.8.0/mux.go:210 +0x1cf
+github.com/suumiizxc/raw_rest1/logger.(*Logger).LogRequest.func1({0x771310, 0xc0001b8000}, 0xc0001a8000)
+	/home/sumiyadorj/Work/go_projects/raw_rest1/logger/logger.go:29 +0x1df
+net/http.HandlerFunc.ServeHTTP(0x0?, {0x771310?, 0xc0001b8000?}, 0x40e6e5?)
+	/usr/local/go/src/net/http/server.go:2084 +0x2f
+net/http.serverHandler.ServeHTTP({0x770680?}, {0x771310, 0xc0001b8000}, 0xc0001a8000)
+	/usr/local/go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc000188000, {0x771568, 0xc00009b4d0})
+	/usr/local/go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:3071 +0x4db
+2022/08/01 23:23:28 logger.go:27: 127.0.0.1:40642 POST /person/create 
+2022/08/01 23:23:28 server.go:3197: http: panic serving 127.0.0.1:40642: runtime error: invalid memory address or nil pointer dereference
+goroutine 36 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/go/src/net/http/server.go:1825 +0xbf
+panic({0x6aaf20, 0x9038f0})
+	/usr/local/go/src/runtime/panic.go:844 +0x258
+github.com/suumiizxc/raw_rest1/api/person.(*Person).CreateUser(0x69af00?, {0x771310, 0xc00020a000}, 0xc000204200)
+	/home/sumiyadorj/Work/go_projects/raw_rest1/api/person/person.go:50 +0x288
+net/http.HandlerFunc.ServeHTTP(0xc000204100?, {0x771310?, 0xc00020a000?}, 0xc0000ae078?)
+	/usr/local/go/src/net/http/server.go:2084 +0x2f
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc000126000, {0x771310, 0xc00020a000}, 0xc000204000)
+	/home/sumiyadorj/go/pkg/mod/github.com/gorilla/mux@v1.8.0/mux.go:210 +0x1cf
+github.com/suumiizxc/raw_rest1/logger.(*Logger).LogRequest.func1({0x771310, 0xc00020a000}, 0xc000204000)
+	/home/sumiyadorj/Work/go_projects/raw_rest1/logger/logger.go:29 +0x1df
+net/http.HandlerFunc.ServeHTTP(0x0?, {0x771310?, 0xc00020a000?}, 0x40e6e5?)
+	/usr/local/go/src/net/http/server.go:2084 +0x2f
+net/http.serverHandler.ServeHTTP({0x770680?}, {0x771310, 0xc00020a000}, 0xc000204000)
+	/usr/local/go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc000188140, {0x771568, 0xc00009b4d0})
+	/usr/local/go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:3071 +0x4db
+2022/08/01 23:23:28 logger.go:27: 127.0.0.1:40644 POST /person/create 
+2022/08/01 23:23:28 server.go:3197: http: panic serving 127.0.0.1:40644: runtime error: invalid memory address or nil pointer dereference
+goroutine 6 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/go/src/net/http/server.go:1825 +0xbf
+panic({0x6aaf20, 0x9038f0})
+	/usr/local/go/src/runtime/panic.go:844 +0x258
+github.com/suumiizxc/raw_rest1/api/person.(*Person).CreateUser(0x69af00?, {0x771310, 0xc00020a0e0}, 0xc000204500)
+	/home/sumiyadorj/Work/go_projects/raw_rest1/api/person/person.go:50 +0x288
+net/http.HandlerFunc.ServeHTTP(0xc000204400?, {0x771310?, 0xc00020a0e0?}, 0xc0000ae078?)
+	/usr/local/go/src/net/http/server.go:2084 +0x2f
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc000126000, {0x771310, 0xc00020a0e0}, 0xc000204300)
+	/home/sumiyadorj/go/pkg/mod/github.com/gorilla/mux@v1.8.0/mux.go:210 +0x1cf
+github.com/suumiizxc/raw_rest1/logger.(*Logger).LogRequest.func1({0x771310, 0xc00020a0e0}, 0xc000204300)
+	/home/sumiyadorj/Work/go_projects/raw_rest1/logger/logger.go:29 +0x1df
+net/http.HandlerFunc.ServeHTTP(0x0?, {0x771310?, 0xc00020a0e0?}, 0x40e6e5?)
+	/usr/local/go/src/net/http/server.go:2084 +0x2f
+net/http.serverHandler.ServeHTTP({0x770680?}, {0x771310, 0xc00020a0e0}, 0xc000204300)
+	/usr/local/go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc0002280a0, {0x771568, 0xc00009b4d0})
+	/usr/local/go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:3071 +0x4db
+2022/08/01 23:23:28 logger.go:27: 127.0.0.1:40646 POST /person/create 
+2022/08/01 23:23:28 server.go:3197: http: panic serving 127.0.0.1:40646: runtime error: invalid memory address or nil pointer dereference
+goroutine 8 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/go/src/net/http/server.go:1825 +0xbf
+panic({0x6aaf20, 0x9038f0})
+	/usr/local/go/src/runtime/panic.go:844 +0x258
+github.com/suumiizxc/raw_rest1/api/person.(*Person).CreateUser(0x69af00?, {0x771310, 0xc00020a1c0}, 0xc000204800)
+	/home/sumiyadorj/Work/go_projects/raw_rest1/api/person/person.go:50 +0x288
+net/http.HandlerFunc.ServeHTTP(0xc000204700?, {0x771310?, 0xc00020a1c0?}, 0xc0000ae078?)
+	/usr/local/go/src/net/http/server.go:2084 +0x2f
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc000126000, {0x771310, 0xc00020a1c0}, 0xc000204600)
+	/home/sumiyadorj/go/pkg/mod/github.com/gorilla/mux@v1.8.0/mux.go:210 +0x1cf
+github.com/suumiizxc/raw_rest1/logger.(*Logger).LogRequest.func1({0x771310, 0xc00020a1c0}, 0xc000204600)
+	/home/sumiyadorj/Work/go_projects/raw_rest1/logger/logger.go:29 +0x1df
+net/http.HandlerFunc.ServeHTTP(0x0?, {0x771310?, 0xc00020a1c0?}, 0x40e6e5?)
+	/usr/local/go/src/net/http/server.go:2084 +0x2f
+net/http.serverHandler.ServeHTTP({0x770680?}, {0x771310, 0xc00020a1c0}, 0xc000204600)
+	/usr/local/go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc0002281e0, {0x771568, 0xc00009b4d0})
+	/usr/local/go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:3071 +0x4db
+2022/08/01 23:23:28 logger.go:27: 127.0.0.1:40648 POST /person/create 
+2022/08/01 23:23:28 server.go:3197: http: panic serving 127.0.0.1:40648: runtime error: invalid memory address or nil pointer dereference
+goroutine 22 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/go/src/net/http/server.go:1825 +0xbf
+panic({0x6aaf20, 0x9038f0})
+	/usr/local/go/src/runtime/panic.go:844 +0x258
+github.com/suumiizxc/raw_rest1/api/person.(*Person).CreateUser(0x69af00?, {0x771310, 0xc00020a2a0}, 0xc000204b00)
+	/home/sumiyadorj/Work/go_projects/raw_rest1/api/person/person.go:50 +0x288
+net/http.HandlerFunc.ServeHTTP(0xc000204a00?, {0x771310?, 0xc00020a2a0?}, 0xc0000ae078?)
+	/usr/local/go/src/net/http/server.go:2084 +0x2f
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc000126000, {0x771310, 0xc00020a2a0}, 0xc000204900)
+	/home/sumiyadorj/go/pkg/mod/github.com/gorilla/mux@v1.8.0/mux.go:210 +0x1cf
+github.com/suumiizxc/raw_rest1/logger.(*Logger).LogRequest.func1({0x771310, 0xc00020a2a0}, 0xc000204900)
+	/home/sumiyadorj/Work/go_projects/raw_rest1/logger/logger.go:29 +0x1df
+net/http.HandlerFunc.ServeHTTP(0x0?, {0x771310?, 0xc00020a2a0?}, 0x40e6e5?)
+	/usr/local/go/src/net/http/server.go:2084 +0x2f
+net/http.serverHandler.ServeHTTP({0x770680?}, {0x771310, 0xc00020a2a0}, 0xc000204900)
+	/usr/local/go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc0000b52c0, {0x771568, 0xc00009b4d0})
+	/usr/local/go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:3071 +0x4db
+2022/08/01 23:23:29 logger.go:27: 127.0.0.1:40650 POST /person/create 
+2022/08/01 23:23:29 server.go:3197: http: panic serving 127.0.0.1:40650: runtime error: invalid memory address or nil pointer dereference
+goroutine 37 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/go/src/net/http/server.go:1825 +0xbf
+panic({0x6aaf20, 0x9038f0})
+	/usr/local/go/src/runtime/panic.go:844 +0x258
+github.com/suumiizxc/raw_rest1/api/person.(*Person).CreateUser(0x69af00?, {0x771310, 0xc0001b80e0}, 0xc0001a8500)
+	/home/sumiyadorj/Work/go_projects/raw_rest1/api/person/person.go:50 +0x288
+net/http.HandlerFunc.ServeHTTP(0xc0001a8400?, {0x771310?, 0xc0001b80e0?}, 0xc0000ae078?)
+	/usr/local/go/src/net/http/server.go:2084 +0x2f
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc000126000, {0x771310, 0xc0001b80e0}, 0xc0001a8300)
+	/home/sumiyadorj/go/pkg/mod/github.com/gorilla/mux@v1.8.0/mux.go:210 +0x1cf
+github.com/suumiizxc/raw_rest1/logger.(*Logger).LogRequest.func1({0x771310, 0xc0001b80e0}, 0xc0001a8300)
+	/home/sumiyadorj/Work/go_projects/raw_rest1/logger/logger.go:29 +0x1df
+net/http.HandlerFunc.ServeHTTP(0x0?, {0x771310?, 0xc0001b80e0?}, 0x40e6e5?)
+	/usr/local/go/src/net/http/server.go:2084 +0x2f
+net/http.serverHandler.ServeHTTP({0x770680?}, {0x771310, 0xc0001b80e0}, 0xc0001a8300)
+	/usr/local/go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc0001881e0, {0x771568, 0xc00009b4d0})
+	/usr/local/go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:3071 +0x4db

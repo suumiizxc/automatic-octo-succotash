@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+
+  redis:
+    image: 'redis:latest'
+    container_name: nextcloud-redis
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
+    ports:
+      - "6379:6379"
+    networks:
+      - nextcloud_network
+
+  db:
+    image: bitnami/postgresql:13
+    container_name: nextcloud-postgresql
+    networks:
+      - nextcloud_network
+    environment:
+      - POSTGRESQL_USER=postgres
+      - POSTGRESQL_PASSWORD=password
+      - POSTGRESQL_DATABASE=nextcloud
+    ports:
+      - "5432:5432"
+    restart: unless-stopped
+
+networks:
+  nextcloud_network:
