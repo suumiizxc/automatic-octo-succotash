@@ -7,6 +7,7 @@ import (
 	"time"
 
 	"github.com/suumiizxc/raw_rest1/config"
+	"github.com/suumiizxc/raw_rest1/response"
 	"golang.org/x/crypto/bcrypt"
 )
 
@@ -22,6 +23,11 @@ type Account struct {
 	Role        uint      `json:"role"`
 	CreatedAt   time.Time `json:"created_at"`
 	UpdatedAt   time.Time `json:"updated_at"`
+}
+
+type LoginUserNameInput struct {
+	UserName string `json:"user_name"`
+	Password string `json:"password"`
 }
 
 func HashPassword(password string) (string, error) {
@@ -65,4 +71,42 @@ func (a *Account) RegisterAccount(w http.ResponseWriter, r *http.Request) {
 	}
 	w.WriteHeader(http.StatusCreated)
 	w.Write([]byte(fmt.Sprintf(`{"id" : "%d"}`, lastID)))
+}
+
+func (a *Account) LoginAccount(w http.ResponseWriter, r *http.Request) {
+	fmt.Println("data : ", r.Context().Value("data"))
+	var input LoginUserNameInput
+	err := json.NewDecoder(r.Body).Decode(&input)
+	if err != nil {
+		w.WriteHeader(http.StatusBadRequest)
+		w.Write([]byte(fmt.Sprintf(`{"message" : "%s", "error" : "%s"}`, "Failed in request body", err.Error())))
+		return
+	}
+	var aa []Account
+	sqlStatement := `
+		select user_name, password from account where user_name = $1
+	`
+	rows, err := config.DB.Query(sqlStatement, input.UserName)
+	if err != nil {
+		w.WriteHeader(http.StatusInternalServerError)
+		w.Write([]byte(fmt.Sprintf(`{"message" : "%s", "error" : "%s"}`, "Failed internal error", err.Error())))
+		return
+	}
+	for rows.Next() {
+		var aa1 Account
+		rows.Scan(&aa1.UserName, &aa1.Password)
+		aa = append(aa, aa1)
+	}
+	fmt.Println("aa : ", aa)
+	if !CheckPasswordHash(input.Password, aa[0].Password) {
+		w.WriteHeader(http.StatusNotImplemented)
+		w.Write([]byte(fmt.Sprintf(`{"message" : "%s", "error": "%s"}`, "Password didn't match", err.Error())))
+	}
+	resp := response.Response{}
+	resp.Data = aa
+	resp.Message = "Successfully logged"
+
+	w.WriteHeader(http.StatusOK)
+	w.Write(resp.ConvertByte())
+
 }

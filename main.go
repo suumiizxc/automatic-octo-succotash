@@ -41,6 +41,7 @@ func main() {
 	accountRouter := mux.PathPrefix("/account").Subrouter()
 	accountRouter.Use(contentTypeApplicationJsonMiddleware)
 	accountRouter.HandleFunc("/create", accountH.RegisterAccount).Methods("POST")
+	accountRouter.HandleFunc("/login", accountH.LoginAccount).Methods("POST")
 
 	if trace == "dev" {
 		fmt.Printf("listening on %v\n", httpPort)
