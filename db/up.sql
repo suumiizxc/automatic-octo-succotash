@@ -70,3 +70,35 @@ create table content_file
 	created_user_id int,
 	updated_user_id int
 );
+
+create table blog 
+(
+	id serial primary key,
+	language varchar(127),
+	title varchar(511),
+	poster varchar(127),
+	cover varchar(127),
+	brief_description text,
+	description text,
+	category_id int,
+	is_published int,
+	is_featured int,
+	feature_start_date timestamp,
+	feature_end_date timestamp,
+	created_at timestamp,
+	updated_at timestamp,
+	created_user_id int,
+	updated_user_id int
+);
+
+create table blog_category 
+(
+	id serial primary key,
+	name_mn varchar(255),
+	name_en varchar(255),
+	is_featured int, 
+	created_at timestamp,
+	updated_at timestamp,
+	created_user_id int,
+	updated_user_id int
+);
